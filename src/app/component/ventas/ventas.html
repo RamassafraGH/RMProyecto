@@ -1,0 +1,41 @@
+
+<section class="sales-dashboard">
+  <div class="dashboard-header">
+    <h2>Análisis de Ventas por Sucursal</h2>
+    <p>
+      Visualización de la facturación mensual de nuestras sucursales.
+    </p>
+  </div>
+
+  @if (errorCarga) {
+    <p class="error">{{ errorCarga }}</p>
+  }
+
+  <div class="card table-card">
+    <div #contenedor class="table-responsive"></div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="card chart-card">
+      <h3>📈 Tendencia Mensual (Líneas)</h3>
+      <div class="svg-container">
+        <svg
+          #graficoLineas
+          viewBox="0 0 600 300"
+          preserveAspectRatio="xMidYMid meet">
+        </svg>
+      </div>
+    </div>
+
+    <div class="card chart-card">
+      <h3>📊 Distribución Acumulada (Barras Apiladas)</h3>
+      <div class="svg-container">
+        <svg
+          #graficoBarras
+          viewBox="0 0 600 300"
+          preserveAspectRatio="xMidYMid meet">
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  color: black;
+  background: white;
+  padding: 20px;
+}
+
+p {
+  display: block;
+  visibility: visible;
+  color: black;
+}

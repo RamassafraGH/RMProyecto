@@ -1,0 +1,13 @@
+<h2>Clientes</h2>
+
+<p>Total de clientes: {{ clientes.length }}</p>
+
+@for (cliente of clientes; track cliente.idCliente) {
+  <p>
+    {{ cliente.idCliente }} -
+    {{ cliente.nombre }}
+    {{ cliente.apellido }} -
+    {{ cliente.situacionFiscal }} -
+    {{ cliente.dni }}
+  </p>
+}
