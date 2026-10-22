@@ -1,0 +1,80 @@
+
+<section class="branches-container">
+
+  <header class="branches-header">
+    <div>
+      <span class="section-label">GESTIÓN COMERCIAL</span>
+      <h2>Nuestras sucursales</h2>
+      <p>Consultá las sedes y su información operativa.</p>
+    </div>
+
+    @if (!cargando && !error) {
+      <div class="branches-count">
+        <span class="count-number">{{ suc.length }}</span>
+        <span class="count-label">Sucursales registradas</span>
+      </div>
+    }
+  </header>
+
+  @if (cargando) {
+    <div class="status-message">
+      <span class="loader"></span>
+      <p>Cargando sucursales...</p>
+    </div>
+  } @else if (error) {
+    <div class="status-message error-message">
+      <span>⚠️</span>
+      <p>{{ error }}</p>
+    </div>
+  } @else if (suc.length === 0) {
+    <div class="status-message">
+      <span>📍</span>
+      <p>No hay sucursales registradas.</p>
+    </div>
+  } @else {
+
+    <div class="branches-grid">
+
+      @for (s of suc; track s.idSucursal) {
+        <article class="branch-card">
+
+          <div class="card-top">
+            <div class="branch-icon">📍</div>
+            <span class="branch-id">
+              Sucursal #{{ s.idSucursal }}
+            </span>
+          </div>
+
+          <div class="branch-info">
+            <h3>{{ s.nombre }}</h3>
+            <p class="city">
+              <span>Ciudad</span>
+              {{ s.ciudad }}
+            </p>
+            <p class="address">
+              <span>Dirección</span>
+              {{ s.direccion }}
+            </p>
+          </div>
+
+          <div class="card-divider"></div>
+
+          <footer class="branch-footer">
+            <div class="employees-icon">👥</div>
+            <div class="employees-info">
+              <span class="employees-label">Personal de la sede</span>
+              <strong>
+                {{ s.cantempleado }}
+                {{ s.cantempleado === 1 ? 'empleado' : 'empleados' }}
+              </strong>
+            </div>
+          </footer>
+
+        </article>
+      }
+
+    </div>
+
+  }
+
+</section>

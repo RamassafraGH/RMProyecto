@@ -1,0 +1,35 @@
+
+.app-header {
+  background: #1e293b;
+  color: white;
+  padding: 20px 32px;
+}
+
+.app-header h1 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-header a {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.app-header a:hover,
+.app-header a.activo {
+  background: #2563eb;
+  color: white;
+}
+
+.contenido {
+  padding: 24px;
+}

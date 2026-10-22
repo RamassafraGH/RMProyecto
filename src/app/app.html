@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+
+<header class="app-header">
+  <h1>RM Proyecto</h1>
+
+  <nav>
+    <a routerLink="/home" routerLinkActive="activo"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+
+    <a routerLink="/ventas" routerLinkActive="activo">
+      Ventas
+    </a>
+
+    <a routerLink="/sucursales" routerLinkActive="activo">
+      Sucursales
+    </a>
+
+    <a routerLink="/clientes" routerLinkActive="activo">
+      Clientes
+    </a>
+  </nav>
+</header>
+
+<main class="contenido">
+  <router-outlet></router-outlet>
+</main>
