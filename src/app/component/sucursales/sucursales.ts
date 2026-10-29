@@ -1,5 +1,10 @@
+import {
+  Component,
+  OnInit,
+  inject,
+  ChangeDetectorRef
+} from '@angular/core';
 
-import { Component, OnInit, inject } from '@angular/core';
 import {
   ServiceSucursal,
   Sucursal
@@ -14,6 +19,7 @@ import {
 export class Sucursales implements OnInit {
 
   private serviceSucursal = inject(ServiceSucursal);
+  private cdr = inject(ChangeDetectorRef);
 
   suc: Sucursal[] = [];
   cargando = true;
@@ -24,11 +30,13 @@ export class Sucursales implements OnInit {
       next: (datos) => {
         this.suc = datos;
         this.cargando = false;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error al obtener sucursales:', err);
         this.error = 'No se pudieron cargar las sucursales.';
         this.cargando = false;
+        this.cdr.detectChanges();
       }
     });
   }

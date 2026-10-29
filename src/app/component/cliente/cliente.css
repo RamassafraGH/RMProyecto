@@ -1,12 +1,15 @@
 :host {
-  display: block;
-  color: black;
-  background: white;
-  padding: 20px;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: black !important;
 }
 
+ul,
+li,
+h2,
 p {
-  display: block;
-  visibility: visible;
-  color: black;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
